@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,21 +14,53 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BJ-iA-mF9">
-                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="coolBackground" translatesAutoresizingMaskIntoConstraints="NO" id="AUb-lg-Fg6">
+                                <rect key="frame" x="-164" y="-35" width="606" height="707"/>
                                 <animations/>
-                                <state key="normal" title="Button"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BJ-iA-mF9">
+                                <rect key="frame" x="121" y="269" width="79" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Click Here">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aFh-mR-IYm"/>
+                                </connections>
                             </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Super-Cool-App" translatesAutoresizingMaskIntoConstraints="NO" id="IlD-pC-DqV">
+                                <rect key="frame" x="33" y="28" width="255" height="94"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IlD-pC-DqV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="752-Bj-CCI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IlD-pC-DqV" secondAttribute="trailing" constant="16" id="GE3-oI-Xay"/>
+                            <constraint firstItem="IlD-pC-DqV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="Og3-T9-xRc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5BJ-iA-mF9" secondAttribute="bottom" constant="269" id="Uar-4O-61r"/>
+                            <constraint firstItem="5BJ-iA-mF9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="105" id="ajv-aw-iXg"/>
+                            <constraint firstItem="5BJ-iA-mF9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="249" id="pD2-Aq-ZmR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5BJ-iA-mF9" secondAttribute="trailing" constant="104" id="xOV-bR-ZUK"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="clickHereBtn" destination="5BJ-iA-mF9" id="5Cg-i2-HXc"/>
+                        <outlet property="coolBackgroundImage" destination="AUb-lg-Fg6" id="0HP-tk-g5z"/>
+                        <outlet property="superCoolAppImage" destination="IlD-pC-DqV" id="Baz-0m-DSa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="301" y="452"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Super-Cool-App" width="777" height="94"/>
+        <image name="coolBackground" width="1920" height="1200"/>
+    </resources>
 </document>
